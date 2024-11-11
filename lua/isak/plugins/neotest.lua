@@ -7,6 +7,7 @@ return {
     "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
     "rcasia/neotest-java", -- java testing
+    "MarkEmmons/neotest-deno",
   },
   keys = {
     {
@@ -14,6 +15,11 @@ return {
       "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
       desc = "Run test file",
     },
+    -- {
+    --   "<leader>jn",
+    --   "<cmd>require('neotest').run.run()",
+    --   desc = "Run nearest testfile",
+    -- },
     {
       "<leader>js",
       "<cmd>lua require('neotest').summary.toggle()<cr>",
@@ -25,6 +31,7 @@ return {
     require("neotest").setup({
       adapters = {
         require("neotest-java"),
+        require("neotest-deno"),
       },
     })
   end,
