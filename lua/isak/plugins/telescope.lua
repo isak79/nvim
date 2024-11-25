@@ -38,6 +38,7 @@ return {
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("git_worktree")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
@@ -47,6 +48,15 @@ return {
     keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+
+    keymap.set("n", "<Leader>fr", "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", silent)
+    keymap.set(
+      "n",
+      "<Leader>fR",
+      "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+      silent
+    )
+
     vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
   end,
 }
