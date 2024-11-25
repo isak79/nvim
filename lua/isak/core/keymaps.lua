@@ -9,6 +9,8 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 -- movement
 keymap.set("n", "ø", "{", { desc = "Move one paragraph up" })
 keymap.set("n", "æ", "}", { desc = "Move one paragraph down" })
+keymap.set("n", "bp", "<CMD>bp<CR>", { desc = "Move to the previous buffer" })
+keymap.set("n", "bn", "<CMD>bn<CR>", { desc = "Move to the next buffer" })
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
