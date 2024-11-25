@@ -13,6 +13,24 @@ return {
     --   If not available, we use `mini` as the fallback
     "rcarriga/nvim-notify",
   },
+  config = function()
+    local notify = require("notify")
+    notify.setup({
+      stages = "fade_in_slide_out",
+      timeout = 3000,
+      background_colour = "#000000",
+    })
+    vim.notify = notify
+
+    -- Configure Noice
+    require("noice").setup({
+      messages = {
+        enabled = true,
+        view = "notify",
+      },
+    })
+  end,
+
   cmdline = {
     format = {
       cmdline = { pattern = "^:", icon = "", lang = "vim" },

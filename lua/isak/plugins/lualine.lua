@@ -52,7 +52,9 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
-        theme = my_lualine_theme,
+        theme = "auto",
+        component_separators = "|",
+        section_separators = "",
       },
       sections = {
         lualine_x = {
@@ -64,6 +66,9 @@ return {
           { "encoding" },
           { "fileformat" },
           { "filetype" },
+        },
+        lualine_c = {
+          "buffers",
         },
       },
     })
