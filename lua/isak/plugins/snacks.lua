@@ -41,5 +41,12 @@ return {
       end,
       desc = "Notification History",
     },
+    {
+      "bx",
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = "Delete Buffer",
+    },
   },
 }
