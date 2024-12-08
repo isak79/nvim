@@ -35,11 +35,26 @@ return {
       desc = "Lazygit Log (cwd)",
     },
     {
+      "<leader>gB",
+      function()
+        Snacks.gitbrowse()
+      end,
+      desc = "Git Browse",
+    },
+
+    {
       "<leader>nn",
       function()
         Snacks.notifier.show_history()
       end,
       desc = "Notification History",
+    },
+    {
+      "<leader>nu",
+      function()
+        Snacks.notifier.hide()
+      end,
+      desc = "Dismiss All Notifications",
     },
     {
       "bx",
