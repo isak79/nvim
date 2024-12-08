@@ -34,5 +34,12 @@ return {
       end,
       desc = "Lazygit Log (cwd)",
     },
+    {
+      "<leader>nn",
+      function()
+        Snacks.notifier.show_history()
+      end,
+      desc = "Notification History",
+    },
   },
 }
