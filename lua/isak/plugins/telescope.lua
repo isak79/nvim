@@ -64,5 +64,7 @@ return {
     )
 
     vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
+
+    require("isak.telescope.multigrep").setup()
   end,
 }
