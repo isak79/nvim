@@ -86,7 +86,7 @@ return {
       desc = "Dismiss All Notifications",
     },
     {
-      "bx",
+      "<leader>mx",
       function()
         Snacks.bufdelete()
       end,

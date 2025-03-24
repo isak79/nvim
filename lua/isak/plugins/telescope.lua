@@ -42,26 +42,32 @@ return {
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
-    keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-    keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-    keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+    keymap.set("n", "mf", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+    keymap.set("n", "mo", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+    keymap.set("n", "ms", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+    keymap.set("n", "mg", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+    keymap.set("n", "mt", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+    keymap.set(
+      "n",
+      "mh",
+      ':lua require"telescope.builtin".find_files({ hidden = true })<cr>',
+      { desc = "Find all files" }
+    )
 
     keymap.set(
       "n",
-      "<Leader>fr",
+      "mr",
       "<CMD>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
       { desc = "Find git worktrees" }
     )
     keymap.set(
       "n",
-      "<Leader>fR",
+      "mR",
       "<CMD>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
       { desc = "Create git worktree" }
     )
 
-    vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
+    vim.keymap.set("n", "mb", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
 
     require("isak.telescope.multigrep").setup()
   end,
